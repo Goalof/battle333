@@ -31,8 +31,14 @@ export default (() => {
 					<Menu display="flex" md-display="none">
 						<Override slot="item-404" display="none" />
 						<Override slot="item-index" display="none" />
-						<Override slot="link" text-decoration-line="initial" color="#18191F" font="--base" />
-						<Override slot="item" padding="6px 15px 6px 15px" />
+						<Override
+							slot="link"
+							text-decoration-line="initial"
+							color="#18191F"
+							font="--base"
+							hover-color="#8C30F5"
+						/>
+						<Override slot="item" padding="6px 15px 6px 15px" cursor="pointer" />
 					</Menu>
 					{"    "}
 				</StackItem>
@@ -46,6 +52,7 @@ export default (() => {
 						padding="10px 24px 10px 24px"
 						color="#8C30F5"
 						md-display="none"
+						hover-background="#FBEEFF"
 					>
 						Login{"\n\n"}
 					</Button>
@@ -57,6 +64,7 @@ export default (() => {
 						padding="10px 24px 10px 24px"
 						color="#ffffff"
 						md-display="none"
+						hover-background="#A044FF"
 					>
 						Sign up{"\n\n"}
 					</Button>
@@ -69,6 +77,8 @@ export default (() => {
 						md-color="#ffffff"
 						md-padding="5px 5px 5px 5px"
 						md-border-radius="8px"
+						md-hover-background="#A044FF"
+						md-cursor="pointer"
 					/>
 					{"    "}
 				</StackItem>
@@ -106,6 +116,7 @@ export default (() => {
 						margin="0px 0px 0px 0px"
 						padding="16px 40px 16px 40px"
 						color="#ffffff"
+						hover-background="#A044FF"
 					>
 						Start using{"\n\n"}
 					</Button>
@@ -320,6 +331,7 @@ export default (() => {
 					margin="0px 0px 0px 0px"
 					padding="16px 40px 16px 40px"
 					color="#ffffff"
+					hover-background="#A044FF"
 				>
 					Start using{"\n\n"}
 				</Button>
@@ -581,6 +593,7 @@ export default (() => {
 					margin="0px 0px 0px 0px"
 					padding="16px 40px 16px 40px"
 					color="#ffffff"
+					hover-background="#A044FF"
 				>
 					Start Ask your question{"\n\n"}
 				</Button>
@@ -693,6 +706,7 @@ export default (() => {
 						padding="10px 10px 10px 10px"
 						border-radius="40%"
 						margin="0px 16px 0px 0px"
+						hover-background="#A044FF"
 					/>
 					<Image
 						width="17px"
@@ -702,6 +716,7 @@ export default (() => {
 						padding="10px 10px 10px 10px"
 						border-radius="40%"
 						margin="0px 16px 0px 0px"
+						hover-background="#A044FF"
 					/>
 					<Image
 						width="17px"
@@ -711,6 +726,7 @@ export default (() => {
 						padding="10px 10px 10px 10px"
 						border-radius="40%"
 						margin="0px 16px 0px 0px"
+						hover-background="#A044FF"
 					/>
 					<Image
 						width="17px"
@@ -720,6 +736,7 @@ export default (() => {
 						padding="10px 10px 10px 10px"
 						border-radius="40%"
 						margin="0px 16px 0px 0px"
+						hover-background="#A044FF"
 					/>
 					{"    "}
 				</StackItem>
