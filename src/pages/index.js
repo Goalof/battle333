@@ -176,7 +176,7 @@ export default (() => {
 			<Override slot="SectionContent" max-width="none" width="100%" />
 			<Components.EmbedHTML />
 		</Section>
-		<Section padding="94px 0 24px 0" md-padding="94px 0 0px 0">
+		<Section padding="94px 0 24px 0" md-padding="94px 0 0px 0" sm-padding="54px 0 0px 0">
 			<Override slot="SectionContent" max-width="1100px" />
 			<Stack margin="-16px -16px 50px -16px">
 				{"    "}
@@ -226,6 +226,7 @@ export default (() => {
 				right="auto"
 				top="auto"
 				z-index="1"
+				sm-height="250px"
 			/>
 		</Section>
 		<Section background="#050028" padding="60px 0 60px 0">
