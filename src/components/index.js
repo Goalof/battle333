@@ -1,3 +1,4 @@
+export { default as BurgerMenu } from "./BurgerMenu"
 export { default as EmbedHTML } from "./EmbedHTML"
 export { default as Cursor } from "./Cursor"
 export { default as Video } from "./Video"

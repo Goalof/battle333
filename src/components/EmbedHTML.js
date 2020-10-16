@@ -54,7 +54,7 @@ const customHtml = `
   top: 0;
   left: 0;
 
-  animation: moveSlideshow 10s linear infinite;
+  animation: moveSlideshow 13s linear infinite;
 }
 
 .mover-1 img {

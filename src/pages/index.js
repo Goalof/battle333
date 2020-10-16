@@ -1,12 +1,13 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Image, Button, Icon, Text, Box } from "@quarkly/widgets";
+import { Theme, Image, Button, Text, Box } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
+import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override, StackItem, Menu, Stack, Section } from "@quarkly/components";
 import * as Components from "components";
-import { MdMenu } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
+		<GlobalQuarklyPageStyles pageUrl={"index"} />
 		<Helmet>
 			<title>
 				Quarkly export
@@ -16,16 +17,16 @@ export default (() => {
 		</Helmet>
 		<Section padding="0px 0 0px 0" box-shadow="0px 1px 0px #E5E9F2">
 			<Override slot="SectionContent" max-width="1100px" />
-			<Stack margin="0px 0px 0px -16px" width="100%">
+			<Stack margin="0px 0px 0px 0px" width="100%" sm-margin="0px 0px 0px 0px">
 				{"    "}
-				<StackItem width="30%" display="flex">
+				<StackItem width="30%" display="flex" sm-width="50%">
 					<Override slot="StackItemContent" align-items="center" />
 					{"        "}
 					<Image width="116px" height="28px" src="https://uploads.quarkly.io/5f7f2dc68a25ab001e4e6f6a/images/logo.svg?v=2020-10-08T15:34:28.710Z" />
 					{"    "}
 				</StackItem>
 				{"    "}
-				<StackItem width="40%" display="flex">
+				<StackItem width="40%" display="flex" sm-display="none">
 					<Override slot="StackItemContent" align-items="center" justify-content="center" />
 					{"        "}
 					<Menu display="flex" md-display="none">
@@ -39,10 +40,12 @@ export default (() => {
 							hover-color="#8C30F5"
 						/>
 						<Override slot="item" padding="6px 15px 6px 15px" cursor="pointer" />
+						<Override slot="item-login" display="none" />
+						<Override slot="item-sign-up" display="none" />
 					</Menu>
 					{"    "}
 				</StackItem>
-				<StackItem width="30%" display="flex">
+				<StackItem width="30%" display="flex" sm-width="50%">
 					<Override slot="StackItemContent" align-items="center" justify-content="flex-end" />
 					{"        "}
 					<Button
@@ -53,6 +56,7 @@ export default (() => {
 						color="#8C30F5"
 						md-display="none"
 						hover-background="#FBEEFF"
+						lg-padding="10px 17px 10px 17px"
 					>
 						Login{"\n\n"}
 					</Button>
@@ -65,21 +69,76 @@ export default (() => {
 						color="#ffffff"
 						md-display="none"
 						hover-background="#A044FF"
+						lg-padding="10px 17px 10px 17px"
 					>
 						Sign up{"\n\n"}
 					</Button>
-					<Icon
-						category="md"
-						icon={MdMenu}
-						display="none"
-						md-display="block"
-						md-background="#8C30F5"
-						md-color="#ffffff"
-						md-padding="5px 5px 5px 5px"
-						md-border-radius="8px"
-						md-hover-background="#A044FF"
-						md-cursor="pointer"
-					/>
+					<Components.BurgerMenu display="none" md-display="block">
+						<Override
+							slot="icon"
+							md-color="#ffffff"
+							md-background="#8C30F5"
+							md-border-radius="8px"
+							md-padding="5px 5px 5px 5px"
+						/>
+						<Override
+							slot="menu"
+							md-flex-direction="column"
+							md-position="absolute"
+							md-width="98.4%"
+							md-left="0px"
+							md-right="0px"
+							md-top="72px"
+							md-height="100vh"
+							md-background="#050028"
+							md-padding="70px 6px 6px 6px"
+						>
+							<Override
+								slot="item"
+								md-text-align="center"
+								md-color="#F0EEFF"
+								md-margin="0px 0px 18px 0px"
+								md-padding="6px 12px 6px 12px"
+							/>
+							<Override
+								slot="link"
+								md-color="#F0EEFF"
+								md-text-decoration-line="initial"
+								md-font="700 24px/20px --fontFamily-googleInter"
+								md-hover-color="#8C30F5"
+							/>
+							<Override slot="item-index" md-display="none" />
+							<Override slot="item-404" md-display="none" />
+							<Override slot="item-login" md-display="flex" md-align-items="center" md-justify-content="center" />
+							<Override slot="item-sign-up" md-display="flex" md-align-items="center" md-justify-content="center" />
+							<Override
+								slot="link-login"
+								md-color="#8C30F5"
+								md-font="700 14px/20px Inter, sans-serif"
+								md-align-items="center"
+								md-background="#F1E4FF"
+								md-display="flex"
+								md-justify-content="center"
+								md-width="100px"
+								md-height="40px"
+								md-border-radius="8px"
+								md-hover-background="#FBEEFF"
+							/>
+							<Override
+								slot="link-sign-up"
+								md-border-radius="8px"
+								md-width="100px"
+								md-height="40px"
+								md-display="flex"
+								md-text-align="right"
+								md-align-items="center"
+								md-justify-content="center"
+								md-font="700 12px/20px Inter, sans-serif"
+								md-hover-background="#A044FF"
+								md-hover-color="#ffffff"
+							/>
+						</Override>
+					</Components.BurgerMenu>
 					{"    "}
 				</StackItem>
 			</Stack>
@@ -434,7 +493,7 @@ export default (() => {
 				{"        "}
 				<Text
 					font="normal 800 48px/64px --fontFamily-googleInter"
-					margin="0px 0px 20px 0px"
+					margin="0px 0px 35px 0px"
 					display="inline-block"
 					text-align="center"
 					color="#18191F"
@@ -461,7 +520,13 @@ export default (() => {
 						border-radius="100%"
 						opacity="0.8"
 					/>
-					<Components.Video border-radius="8px" src="http://telegram.ucoz.net/konkurs.mp4" poster="https://uploads.quarkly.io/5f7f2dc68a25ab001e4e6f6a/images/Project%20Cover.png?v=2020-10-08T16:54:38.612Z" controls={false}>
+					<Components.Video
+						border-radius="8px"
+						src="http://telegram.ucoz.net/konkurs.mp4"
+						poster="https://uploads.quarkly.io/5f7f2dc68a25ab001e4e6f6a/images/Project%20Cover.png?v=2020-10-08T16:54:38.612Z"
+						controls={false}
+						playOnHover
+					>
 						<Image width="64px" height="64px" />
 					</Components.Video>
 				</Box>
@@ -469,7 +534,7 @@ export default (() => {
 					{"    "}
 					<StackItem width="50%" display="flex" md-width="100%">
 						{"        "}
-						<Text font="normal 800 28px/40px --fontFamily-googleInter" margin="0px 0px 0px 0px" display="inline-block">
+						<Text font="normal 800 28px/40px --fontFamily-googleInter" margin="35px 0px 0px 0px" display="inline-block">
 							Program interface overview{"\n\n"}
 						</Text>
 						{"    "}
@@ -477,7 +542,7 @@ export default (() => {
 					{"    "}
 					<StackItem width="50%" display="flex" md-width="100%">
 						{"        "}
-						<Text font="normal 400 16px/26px --fontFamily-googleInter" margin="0px 0px 0px 0px" display="inline-block">
+						<Text font="normal 400 16px/26px --fontFamily-googleInter" margin="35px 0px 0px 0px" display="inline-block">
 							We will tell you about the program interface, how to add applications and employees, how to collect requests and process payments, monitor analytics. You can watch our other reviews on our YouTube{"\n\n"}
 						</Text>
 						{"    "}
